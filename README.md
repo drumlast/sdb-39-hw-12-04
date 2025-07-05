@@ -15,7 +15,7 @@ JOIN city c ON a.city_id = c.city_id
 JOIN customer cu ON st.store_id = cu.store_id
 GROUP BY st.store_id
 HAVING COUNT(cu.customer_id) > 300;
-  ```
+```
 Магазин с более чем 300 покупателями ![alt text](img/1.png)
 
 ### Задание 2
@@ -24,8 +24,8 @@ HAVING COUNT(cu.customer_id) > 300;
 SELECT COUNT(*) AS film_count
 FROM film
 WHERE length > (SELECT AVG(length) FROM film);
-  ```
-Фильмы ![alt text](img/2.png)
+```
+Фильмы, чья продолжительность больше средней ![alt text](img/2.png)
 
 ### Задание 3
 #### Месяц с максимальной суммой платежей и количество аренд
@@ -40,7 +40,7 @@ GROUP BY payment_month
 ORDER BY total_amount DESC
 LIMIT 1;
 ```
-Месяц ![alt text](img/3.png)
+Месяц с максимальной суммой платежей и количество аренд ![alt text](img/3.png)
 
 ### Задание 4
 #### Количество продаж по каждому продавцу + колонка «Премия»
@@ -57,8 +57,8 @@ SELECT
 FROM staff s
 JOIN payment p ON s.staff_id = p.staff_id
 GROUP BY s.staff_id;
-  ```
-Количество продаж ![alt text](img/4.png)
+```
+Количество продаж по каждому продавцу + колонка «Премия» ![alt text](img/4.png)
 
 ### Задание 5
 #### Фильмы, которые ни разу не брали в аренду
@@ -68,5 +68,5 @@ FROM film f
 LEFT JOIN inventory i ON f.film_id = i.film_id
 LEFT JOIN rental r ON i.inventory_id = r.inventory_id
 WHERE r.rental_id IS NULL;
-  ```
+```
 Фильмы, которые ни разу не брали в аренду ![alt text](img/5.png)
